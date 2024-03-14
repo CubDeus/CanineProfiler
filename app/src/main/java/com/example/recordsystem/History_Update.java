@@ -176,6 +176,7 @@ ActivityHistoryUpdateBinding binding;
         patientNote = binding.updatePatientNote.getText().toString().trim();
         recommendation = binding.updateRecommendation.getText().toString().trim();
 
+
         TransactModel records = new TransactModel(pva, petName, medicalHistory, clinicExam, labExam,labExamImage, tentativeDiagnos, finalDiagnos, prognosis, treatment, prescription,nextVisit,clientNote, patientNote,recommendation, currentDate);
 
         FirebaseDatabase.getInstance().getReference("Vet Transactions").child(pva)
