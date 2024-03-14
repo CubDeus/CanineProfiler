@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">HealthPaw</string>
+    <string name="channel_name">RecordVet\n</string>
+    <string name="channel_description">This is a notification\n</string>
+    <string name="remarks">Remarks:</string>
+    <string name="select">Select</string>
+    <string name="quot">\"Keep track of your pup, hassle-free!\"</string>
+    <string name="name_app">Canine Profile</string>
+    <string-array name="prognosis_options">
+        <item>Excellent</item>
+        <item>Good</item>
+        <item>Fair</item>
+        <item>Poor</item>
+        <item>Guarded</item>
+    </string-array>
+</resources>
