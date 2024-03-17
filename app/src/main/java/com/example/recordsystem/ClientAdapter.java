@@ -84,6 +84,7 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.viewHolder
     }
     public class viewHolder extends RecyclerView.ViewHolder {
         CardClientBinding binding;
+
         public viewHolder(@NonNull View itemView) {
             super(itemView);
             binding = CardClientBinding.bind(itemView);

@@ -144,23 +144,17 @@ ActivityInputBinding binding;
      loadingDialog.show();
 
 
-        storageReference.putFile(contentUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+        storageReference.putFile(contentUri).addOnSuccessListener(taskSnapshot -> {
 
-                Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-                while (!uriTask.isComplete());
-                Uri urlImage = uriTask.getResult();
-                 imageProfile = urlImage.toString();
-                upload();
-                loadingDialog.show();
-                showNotification();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                loadingDialog.show();;
-            }
+            Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+            while (!uriTask.isComplete());
+            Uri urlImage = uriTask.getResult();
+             imageProfile = urlImage.toString();
+            upload();
+            loadingDialog.show();
+            showNotification();
+        }).addOnFailureListener(e -> {
+            loadingDialog.show();;
         });
 
     }
