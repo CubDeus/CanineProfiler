@@ -177,7 +177,6 @@ ActivityInputBinding binding;
                 .setBadgeIconType(NotificationCompat.BADGE_ICON_LARGE)
                 .setContentTitle("Upload Successful!")
                 .setContentText("New client added!")
-                .setVibrate(new long[]{0, 1000, 500, 1000})
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(Input.this);
         notificationManager.notify(notificationId, builder.build());

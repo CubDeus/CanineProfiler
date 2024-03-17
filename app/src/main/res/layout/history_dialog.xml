@@ -564,7 +564,7 @@
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackground"
-        android:src="@drawable/updater"
+        android:src="@drawable/update"
         app:layout_constraintEnd_toEndOf="@+id/view14"
         app:layout_constraintTop_toTopOf="@+id/view14"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -576,7 +576,7 @@
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackground"
-        android:src="@drawable/download"
+        android:src="@drawable/screenshot"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="@+id/cardView"
         app:layout_constraintTop_toBottomOf="@+id/cardView"

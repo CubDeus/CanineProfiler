@@ -12,7 +12,6 @@ public class Records {
                    String ownerName, String contact,
                    String address,
                    String imageProfile) {
-
         this.pva = pva;
         this.petName = petName;
         this.dob = dob;
@@ -23,6 +22,7 @@ public class Records {
         this.contact = contact;
         this.address = address;
         this.imageProfile = imageProfile;
+
     }
 
     public String getPva() {
