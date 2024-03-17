@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -47,6 +48,7 @@ ActivityInputBinding binding;
     String pva, petName, dob, sex, breed, color, ownerName, contact, imageProfile, address;
     Uri contentUri;
     Handler handler = new Handler();
+    TextView text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +57,7 @@ ActivityInputBinding binding;
 
         PushDownAnim.setPushDownAnimTo(binding.camera)
                 .setScale(PushDownAnim.MODE_SCALE, 0.95f);
+
         startTimestamp();
 
         ActivityResultLauncher <Intent> activityResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
@@ -178,8 +181,8 @@ ActivityInputBinding binding;
         NotificationCompat.Builder builder = new NotificationCompat.Builder(Input.this, CHANNEL_ID)
                 .setSmallIcon(R.drawable.care)
                 .setBadgeIconType(NotificationCompat.BADGE_ICON_LARGE)
-                .setContentTitle("Upload Successful")
-                .setContentText("New client added")
+                .setContentTitle("Upload Successful!")
+                .setContentText("New client added!")
                 .setVibrate(new long[]{0, 1000, 500, 1000})
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(Input.this);
