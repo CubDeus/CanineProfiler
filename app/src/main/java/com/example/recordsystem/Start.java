@@ -27,7 +27,7 @@ ActivityStartBinding binding;
         });
         binding.newBtn.setOnClickListener(v -> {
 
-            Intent intent = new Intent(Start.this, Input.class);   // Makadto ni sa Input
+            Intent intent = new Intent(Start.this, Input.class);   // Makadto ni sa Input activity
             startActivity(intent); // amo ni trigger makadto sa isa ka activity / Input
         });
     }
