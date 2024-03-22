@@ -127,6 +127,7 @@ ActivityInputBinding binding;
                 calendar.set(Calendar.MINUTE, minute1);
 
                 // Format date and time
+
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:a", Locale.getDefault());
                 String dateTime = dateFormat.format(calendar.getTime());
 
