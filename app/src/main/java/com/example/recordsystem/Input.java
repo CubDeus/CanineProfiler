@@ -75,12 +75,7 @@ ActivityInputBinding binding;
                 }
         );
 
-        binding.newDOB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDateTime();
-            }
-        });
+        binding.newDOB.setOnClickListener(v -> showDateTime());
         // Fetch the next available PVA number
         fetchNextPvaNumber();
         binding.camera.setOnClickListener(new View.OnClickListener() {
@@ -95,12 +90,7 @@ ActivityInputBinding binding;
 
             }
         });
-        binding.uploadPatient.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                uploadData();
-            }
-        });
+        binding.uploadPatient.setOnClickListener(v -> uploadData());
 
     }
 

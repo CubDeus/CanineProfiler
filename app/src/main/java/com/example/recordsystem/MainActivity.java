@@ -48,13 +48,14 @@ String currentPhotoPath, name;
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //Connection from firebase database
        database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
         reference = FirebaseDatabase.getInstance().getReference("Vet Records");
 
-        list = new ArrayList<>();
-        GridLayoutManager lm = new GridLayoutManager (MainActivity.this, 1);
+        list = new ArrayList<>(); //nag call ka
+        GridLayoutManager lm = new GridLayoutManager (MainActivity.this, 1); //
         binding.recMain.setLayoutManager(lm);
         adapter = new ClientAdapter(this, list);
         binding.recMain.setAdapter(adapter);

@@ -53,7 +53,7 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.viewHolder
             holder.binding.cardContact.setText(list.get(position).getContact());
             holder.binding.cardAddress.setText(list.get(position).getAddress());
 
-            holder.binding.cardvet.setOnClickListener(v -> {
+            holder.binding.cardvet.setOnClickListener(v -> { // cardview
                 Intent intent = new Intent(context, Details.class);
                 intent.putExtra("Image", list.get(holder.getAdapterPosition()).getImageProfile());
                 intent.putExtra("PVA", list.get(holder.getAdapterPosition()).getPva());

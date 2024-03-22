@@ -83,17 +83,13 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.viewHold
             holder.binding.historyTentative.setText(Tm.getTentativeDiagnos());
             holder.binding.historyTreatment.setText(Tm.getTreatment());
 
-            holder.binding.transactCard.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                   showHistory(Tm.getPva(),Tm.getPetName(),Tm.getCurrentDate(),
-                           Tm.getLabExamImage(),Tm.getLabExam(),Tm.getClientNote(),
-                           Tm.getFinalDiagnos(),Tm.getMedicalHistory(), Tm.getNextVisit(),
-                           Tm.getPatientNote(),Tm.getPrescription(), Tm.getPrognosis(),
-                           Tm.getRecommendation(), Tm.getTentativeDiagnos(), Tm.getTreatment(),
-                   Tm.getClinicExam(),Tm);
-                }
-            });
+            holder.binding.transactCard.setOnClickListener(v ->
+                    showHistory(Tm.getPva(),Tm.getPetName(),Tm.getCurrentDate(),
+                    Tm.getLabExamImage(),Tm.getLabExam(),Tm.getClientNote(),
+                    Tm.getFinalDiagnos(),Tm.getMedicalHistory(), Tm.getNextVisit(),
+                    Tm.getPatientNote(),Tm.getPrescription(), Tm.getPrognosis(),
+                    Tm.getRecommendation(), Tm.getTentativeDiagnos(), Tm.getTreatment(),
+            Tm.getClinicExam(),Tm));
 
         }
         else {

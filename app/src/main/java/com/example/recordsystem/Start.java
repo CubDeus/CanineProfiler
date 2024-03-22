@@ -21,12 +21,14 @@ ActivityStartBinding binding;
         setContentView(binding.getRoot());
 
         binding.contBtn.setOnClickListener(v -> {
+            // Makadto ni sa MainActivity
             Intent i = new Intent(Start.this, MainActivity.class);
             startActivity(i);
         });
         binding.newBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(Start.this, Input.class);
-            startActivity(intent);
+            Intent intent = new Intent(Start.this, Input.class);   // Makadto ni sa Input activity
+            startActivity(intent); // amo ni trigger makadto sa isa ka activity / Input
+            // additional nga comment
         });
     }
 }
