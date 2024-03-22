@@ -2,16 +2,20 @@ package com.example.recordsystem;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -36,6 +40,7 @@ import com.google.firebase.storage.UploadTask;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Objects;
@@ -70,6 +75,12 @@ ActivityInputBinding binding;
                 }
         );
 
+        binding.newDOB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDateTime();
+            }
+        });
         // Fetch the next available PVA number
         fetchNextPvaNumber();
         binding.camera.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +104,43 @@ ActivityInputBinding binding;
 
     }
 
+    private void showDateTime() {
+        // Get current date and time
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+
+        // Create date picker dialog
+        DatePickerDialog datePickerDialog = new DatePickerDialog(Input.this, (view, year1, month1, dayOfMonth1) -> {
+            // Set selected date to calendar
+            calendar.set(Calendar.YEAR, year1);
+            calendar.set(Calendar.MONTH, month1);
+            calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth1);
+
+            // Create time picker dialog
+            TimePickerDialog timePickerDialog = new TimePickerDialog(Input.this, (view1, hourOfDay, minute1) -> {
+                // Set selected time to calendar
+                calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                calendar.set(Calendar.MINUTE, minute1);
+
+                // Format date and time
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:a", Locale.getDefault());
+                String dateTime = dateFormat.format(calendar.getTime());
+
+                // Set formatted date and time to TextInputEditText
+                binding.newDOB.setText(dateTime);
+            }, hour, minute, false);
+
+            // Show time picker dialog
+            timePickerDialog.show();
+        }, year, month, dayOfMonth);
+
+        // Show date picker dialog
+        datePickerDialog.show();
+    }
 
 
     private Dialog createLoadingDialog() {

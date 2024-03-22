@@ -113,7 +113,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/lexend"
-                    android:hint="Name"
+                    android:hint="Name of Dog"
                     android:inputType="textCapSentences" />
             </com.google.android.material.textfield.TextInputLayout>
 
